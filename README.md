@@ -41,3 +41,11 @@ npm start
 ```
 
 Now browse to the app at `http://localhost:8000/app/index.html`.
+
+### Development
+
+I have created a grunt task for development that will start the karma test server and run jshint and unit tests whenever a javascript file is saved. To start this run:
+
+```
+grunt development
+```
