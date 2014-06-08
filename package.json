@@ -1,0 +1,21 @@
+{
+  "name": "BackboneBattleships",
+  "version": "1.0.0",
+  "description": "Backbone implementation of a Battleships game",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jonoh89/BackboneBattleships.git"
+  },
+  "author": "Jonathan Holmlund (jonoh89@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jonoh89/BackboneBattleships/issues"
+  },
+  "homepage": "https://github.com/Jonoh89/BackboneBattleships",
+   "devDependencies": {
+        "bower": "^1.3.5"
+    },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
