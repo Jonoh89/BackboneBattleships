@@ -31,6 +31,17 @@ module.exports = function(grunt) {
             }
         },
 
+        less: {
+            development: {
+                options: {
+                    paths: ["app/assets/style",'app/bower_components/bootstrap/less']
+                },
+                files: {
+                    "app/assets/style/my-bootstrap.css": "app/assets/style/bootstrap.less"
+                }
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['<%= files.myJS %>'],
@@ -41,6 +52,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['jshint']);
