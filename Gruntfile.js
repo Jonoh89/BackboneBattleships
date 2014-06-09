@@ -3,7 +3,8 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         files: {
-            myJS: ['Gruntfile.js', 'app/js/**/*.js']
+            myJS: ['Gruntfile.js', 'app/js/**/*.js'],
+            myLess: ['app/assets/style/**/*.less']
         },
 
         jshint: {
@@ -32,12 +33,17 @@ module.exports = function(grunt) {
         },
 
         less: {
-            development: {
+            bootstrap: {
                 options: {
                     paths: ["app/assets/style",'app/bower_components/bootstrap/less']
                 },
                 files: {
                     "app/assets/style/my-bootstrap.css": "app/assets/style/bootstrap.less"
+                }
+            },
+            site: {
+                files: {
+                    "app/assets/style/site.css": "app/assets/style/site.less"
                 }
             }
         },
@@ -46,6 +52,10 @@ module.exports = function(grunt) {
             scripts: {
                 files: ['<%= files.myJS %>'],
                 tasks: ['jshint','karma:unit:run']
+            },
+            less: {
+                files: ['<%= files.myLess %>'],
+                tasks: ['less']
             }
         }
     });

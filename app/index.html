@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Backbone Battleships!</title>
     <link href="assets/style/my-bootstrap.css" rel="stylesheet">
+    <link href="assets/style/site.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -11,11 +12,11 @@
     </header>
     <section id="game" class="container">
         <span id="hits"></span>
-        <div style="background-color: red" class="container-fluid" id="grid"></div>
+        <div class="container-fluid" id="grid"></div>
     </section>
 
     <script type="text/template" id="square-template">
-        <div style="background: #808080" class="square <%= status %>">Ship <%= ship %>, hit <%= hit %> <%= status %></div>
+        <div class="square <%= status %>">Ship <%= ship %>, hit <%= hit %> <%= status %></div>
     </script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="bower_components/json2/json2.js"></script>
