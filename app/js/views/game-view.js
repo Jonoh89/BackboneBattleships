@@ -6,11 +6,25 @@ var app = app || {};
     app.GameView = Backbone.View.extend({
         el: '#game',
         initialize: function() {
-            this.$hits = this.$('#hits');
+            this.$grid = this.$('#grid');
             this.render();
         },
         render: function() {
-            this.$hits.html('0 Hits');
+            var playerGrid = new app.Grid();
+
+            function addSquaresToRow(row){
+                var gridRow = playerGrid.getRow(i);
+                gridRow.forEach(function(square){
+                    var squareView = new app.SquareView({model:square});
+                    row.append(squareView.render().el);
+                }, this);
+            }
+
+            for(var i = 1; i <= playerGrid.getGridSize(); i++) {
+                var row = $("<div class='row'></div>");
+                addSquaresToRow(row);
+                this.$grid.append(row);
+            }
         }
     });
 
