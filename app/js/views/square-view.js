@@ -13,7 +13,15 @@ var app = app || {};
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             return this;
+        },
+        events: {
+            'click .square': 'squareHit'
+        },
+
+        squareHit: function() {
+            this.model.set('hit',true);
         }
+
     });
 
 })(jQuery);

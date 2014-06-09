@@ -12,6 +12,9 @@
   padding: 0;
   margin: 1px;
 }
+#grid .square.miss {
+  background-color: red;
+}
 #grid .square:hover {
   background-color: #ffffff;
 }
