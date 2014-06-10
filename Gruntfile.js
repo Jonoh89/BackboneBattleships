@@ -65,6 +65,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jshint','less']);
     grunt.registerTask('development',['karma:unit:start','watch']);
 };

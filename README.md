@@ -12,6 +12,13 @@ To get you started you need install the dependencies:
 
 This project will require a number of node.js tools to initialize and run the project on your machine. You must have node.js and its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
+It will also require the grunt and bower cli, this is ideally installed globally with the following commands: 
+
+```
+npm install -g grunt-cli
+npm install -g bower
+```
+note: sudo or admin rights may be required.
 
 ### Install Dependencies
 
@@ -44,7 +51,12 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 ### Development
 
-I have created a grunt task for development that will start the karma test server and run jshint and unit tests whenever a javascript file is saved. To start this run:
+I have created a grunt task for development that will:
+* Start the karma test server 
+* Run jshint and unit tests whenever a javascript file is saved. 
+* Compile less into standard .css files
+
+To start this run:
 
 ```
 grunt development
