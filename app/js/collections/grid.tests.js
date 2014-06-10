@@ -32,4 +32,12 @@ describe('Grid tests', function() {
             x++;
         },this);
     });
+
+    it('should have 13 squares with ships', function() {
+        var shipsSquares = grid.filter(function(square) {
+            return square.get('ship') === true;
+        });
+
+        expect(shipsSquares.length).toBe(13);
+    });
 });

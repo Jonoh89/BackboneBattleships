@@ -18,3 +18,9 @@
 #grid .square.miss {
   background-color: red;
 }
+#grid .square.ship {
+  background-color: #808080;
+}
+#grid .square.sunk {
+  background-color: green;
+}
