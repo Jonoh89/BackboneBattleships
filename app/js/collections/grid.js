@@ -5,6 +5,7 @@ var app = app || {};
 
     var gridSize = 10;
     var shipSizes = [5,4,4];
+    var ships = [];
 
     app.Grid = Backbone.Collection.extend({
         model: app.Square,
@@ -41,18 +42,26 @@ var app = app || {};
 
             shipSizes.forEach(function(size) {
                 var shipCoordinates = placeShip(size);
+                ships.push({coordinates:shipCoordinates,squares: []});
                 squaresWithShips = squaresWithShips.concat(shipCoordinates);
             });
 
-            for(var y = 1; y <= gridSize; y++) {
-                for(var x = 1; x <= gridSize; x++) {
-                    var coordinates = {x:x, y:y};
-                    if($.inArray('x' + x + 'y' + y,squaresWithShips) > -1) {
-                        coordinates.ship = true;
+            function addSquareToShip (coordinateString, square) {
+                ships.forEach(function (ship) {
+                    if ($.inArray(coordinateString, ship.coordinates) > -1) {
+                        ship.squares.push(square);
                     }
-                    var square = new app.Square(coordinates);
-                    this.add(square);
-                }
+                });
+            }
+
+            for(var y = 1; y <= gridSize; y++) for (var x = 1; x <= gridSize; x++) {
+                var coordinateString = 'x' + x + 'y' + y;
+                var ship = $.inArray(coordinateString, squaresWithShips) > -1;
+
+
+                var square = new app.Square({x: x, y: y, ship: ship});
+                addSquareToShip(coordinateString, square);
+                this.add(square);
             }
         },
 
@@ -64,6 +73,21 @@ var app = app || {};
             return this.filter(function(square) {
                  return square.get('y') === row;
             });
+        },
+
+        sunkenShips: function() {
+            var sunkenCount = 0;
+            ships.forEach(function(ship) {
+                var notHitSquares =  ship.squares.filter(function(square) {
+                    return square.get('hit') === false;
+                });
+                if (notHitSquares.length === 0) {
+                    sunkenCount++;
+                }
+            });
+            return sunkenCount;
         }
     });
+
+    app.PlayerGrid = new app.Grid();
 })();

@@ -40,4 +40,19 @@ describe('Grid tests', function() {
 
         expect(shipsSquares.length).toBe(13);
     });
+
+    it('should return the correct amount of sunken ships', function() {
+        var sunkenShips = grid.sunkenShips();
+        expect(sunkenShips).toBe(0);
+
+        var shipsSquares = grid.filter(function(square) {
+            return square.get('ship') === true;
+        });
+        shipsSquares.forEach(function(ship) {
+            ship.set('hit', true);
+        });
+
+        sunkenShips = grid.sunkenShips();
+        expect(sunkenShips).toBe(3);
+    });
 });
