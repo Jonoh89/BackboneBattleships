@@ -11,7 +11,7 @@
         <h1 class="text-center">Backbone Battleships!</h1>
     </header>
     <section id="game" class="container">
-        <p class="game-info text-center text-primary" id="sunk">Score: 0</p>
+        <p class="game-info text-center text-white" id="sunk">Score: 0</p>
         <div id="sunkAlert" class="game-info alert alert-success hidden text-center"><strong>Well Done!</strong>, you sunk a ship!</div>
         <div class="container-fluid" id="grid"></div>
 
@@ -34,6 +34,10 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <p class="text-center text-white"><em>By Jonathan Holmlund</em></p>
+    </footer>
 
     <script type="text/template" id="square-template">
         <div class="square <%= status %>">&nbsp</div>

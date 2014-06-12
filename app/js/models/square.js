@@ -27,10 +27,6 @@ var app = app || {};
                     return 'sunk';
                 } else if(hit && !ship) {
                     return 'miss';
-                } else if(!hit && ship) {
-                    return 'ship';
-                } else if (!hit && !ship) {
-                    return 'nothing';
                 }
             }
             addComputedProperty(this,'status',['ship', 'hit'],calculateStatus);
