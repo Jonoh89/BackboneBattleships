@@ -11,13 +11,32 @@
         <h1 class="text-center">Backbone Battleships!</h1>
     </header>
     <section id="game" class="container">
-        <span id="hits"></span>
-        <span id="sunk"></span>
+        <p class="game-info text-center text-primary" id="sunk">Score: 0</p>
+        <div id="sunkAlert" class="game-info alert alert-success hidden text-center"><strong>Well Done!</strong>, you sunk a ship!</div>
         <div class="container-fluid" id="grid"></div>
+
+        <div id="finishedModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Congratulations!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Well done! You sunk all the ships.</p>
+                        <p>Play again?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button id="play-again" type="button" class="btn btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script type="text/template" id="square-template">
-        <div class="square <%= status %>">Ship <%= ship %>, hit <%= hit %> <%= status %></div>
+        <div class="square <%= status %>">&nbsp</div>
     </script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="bower_components/json2/json2.js"></script>

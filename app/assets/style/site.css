@@ -1,9 +1,47 @@
-#grid {
+#game #grid {
   background-color: transparent;
   border: 5px solid #000000;
 }
-#grid .col-md-1 {
-  padding: 0px;
+#game #grid .row span {
+  padding: 0;
+  margin: 1px 0;
+  float: left !important;
+  width: 10% !important;
+}
+@media (min-width: 768px) {
+  #game #grid .row span {
+    height: 57px;
+  }
+}
+@media (max-width: 767px) {
+  #game #grid .row span {
+    height: 27px;
+  }
+}
+@media (min-width: 768px) {
+  #game #grid {
+    width: 600px;
+    height: 600px;
+  }
+}
+@media (max-width: 767px) {
+  #game #grid {
+    width: 300px;
+    height: 300px;
+  }
+}
+#game .game-info {
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  #game .game-info {
+    width: 600px;
+  }
+}
+@media (max-width: 767px) {
+  #game .game-info {
+    width: 300px;
+  }
 }
 #grid .square {
   background-color: lightblue;
@@ -11,6 +49,7 @@
   cursor: pointer;
   padding: 0;
   margin: 1px;
+  height: 100%;
 }
 #grid .square:hover {
   background-color: #ffffff;

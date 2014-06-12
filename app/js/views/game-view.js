@@ -5,9 +5,14 @@ var app = app || {};
 
     app.GameView = Backbone.View.extend({
         el: '#game',
+        events: {
+            'click #play-again': 'newGame'
+        },
         initialize: function() {
             this.$grid = this.$('#grid');
             this.$sunk = this.$('#sunk');
+            this.$sunkAlert = this.$('#sunkAlert');
+            this.sunkenShips = 0;
             this.listenTo(app.PlayerGrid, 'change:status', this.updateScore);
             this.render();
         },
@@ -27,7 +32,22 @@ var app = app || {};
             }
         },
         updateScore: function() {
-            this.$sunk.html('Score: ' + app.PlayerGrid.sunkenShips());
+            var sunkenShips = app.PlayerGrid.sunkenShips();
+            this.$sunk.html('Score: ' + sunkenShips);
+            if(sunkenShips > this.sunkenShips) {
+                var self = this;
+                $(this.$sunkAlert).removeClass('hidden');
+                setTimeout(function() {
+                        self.$sunkAlert.addClass('hidden');
+                },4000);
+            }
+            this.sunkenShips = sunkenShips;
+            if(this.sunkenShips === 3) {
+                $("#finishedModal").modal({show:true});
+            }
+        },
+        newGame: function() {
+            window.location.reload();
         }
     });
 

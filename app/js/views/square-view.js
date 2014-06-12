@@ -5,7 +5,7 @@ var app = app || {};
 
     app.SquareView = Backbone.View.extend({
         tagName: 'span',
-        className: 'col-md-1',
+        className: 'col-md-1 .col-xs-1',
         template: _.template($('#square-template').html()),
         initialize: function() {
             this.listenTo(this.model, 'change', this.render);

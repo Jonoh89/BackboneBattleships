@@ -1,0 +1,54 @@
+#game {
+
+  #grid {
+
+    background-color: transparent;
+    border: 5px solid #000000;
+
+    .row span {
+      padding: 0;
+      margin: 1px 0;
+      float: left !important;
+      width: 10% !important;
+
+      @media (min-width: @screen-sm-min) {
+        height: 57px;
+      }
+
+      @media (max-width: @screen-xs-max) {
+        height: 27px;
+      }
+    }
+
+    @media (min-width: @screen-sm-min) {
+      width: 600px;
+      height: 600px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      width: 300px;
+      height: 300px;
+    }
+
+  }
+
+  .game-info {
+    margin: 0 auto;
+
+    @media (min-width: @screen-sm-min) {
+      width: 600px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      width: 300px;
+    }
+  }
+
+
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+  }
+  @media (min-width: @screen-lg-min) {
+
+  }
+}
