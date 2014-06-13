@@ -1,7 +1,7 @@
 Backbone Battleships
 ===================
 
-A basic battleship game written in Backbone
+A basic battleship game written in Backbone, to see it running to do http://development.bbbattleships.divshot.io/
 
 ## Getting Started
 
@@ -22,12 +22,12 @@ note: sudo or admin rights may be required.
 
 ### Install Dependencies
 
-There is two kinds of dependencies in this project: node tools and JavaScript librarys. 
+There is two kinds of dependencies in this project: node tools and JavaScript libraries. 
 
 * You get the tools the project depend upon via `npm`, the [node package manager][npm].
 * You get the Backbone code via `bower`, a [client-side code package manager][bower].
 
-I have preconfigured `npm` to automatically run `bower` so we can simply do:
+I have pre-configured `npm` to automatically run `bower` so we can simply do:
 
 ```
 npm install
@@ -61,3 +61,9 @@ To start this run:
 ```
 grunt development
 ```
+
+### Compatibly
+
+Please note this app was developed in chrome with a total disregard for outdated browsers :) so update or miss out on the best battleships game you will ever play!
+
+Tested and seems to (sort of) work on iPhone and everything but the background on my windows phone 8 phone (which is a miracle based on what most sites look like using it).
