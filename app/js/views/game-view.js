@@ -42,7 +42,7 @@ var app = app || {};
                 },4000);
             }
             this.sunkenShips = sunkenShips;
-            if(this.sunkenShips === 3) {
+            if(this.sunkenShips === app.PlayerGrid.ships.length) {
                 $("#finishedModal").modal({show:true});
             }
         },
